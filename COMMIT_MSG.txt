@@ -1,0 +1,6 @@
+Fix: Hardcode secure cookie, same-site none, and stateful domains
+
+- Hardcode session domain to null to resolve public suffix issues
+- Hardcode session secure to true and SameSite to none to guarantee cross-domain cookies are saved and sent
+- Set session default driver to cookie (stateless and lightweight for Render)
+- Merge cits-frontend-mu.vercel.app and *.vercel.app directly into Sanctum's stateful domains
